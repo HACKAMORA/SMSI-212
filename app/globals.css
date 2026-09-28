@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(900px 420px at 8% -8%, rgba(79, 70, 229, 0.08), transparent 55%),
+    radial-gradient(700px 380px at 100% 0%, rgba(245, 158, 11, 0.07), transparent 50%),
+    #f3f2ee;
+  color: #141413;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #4f46e5;
+  color: #fff;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  background: #fff !important;
+  border: 1px solid #e7e5dc !important;
+  color: #141413 !important;
+  border-radius: 12px !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+input[type="checkbox"] {
+  accent-color: #4f46e5;
+  width: 1rem;
+  height: 1rem;
+}
+
+@layer components {
+  .ui-card {
+    @apply rounded-2xl border border-paper-line bg-white shadow-card;
+  }
+  .ui-h1 {
+    @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl;
+  }
+  .ui-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.16em] text-teal;
+  }
+  .ui-btn {
+    @apply inline-flex h-10 items-center justify-center rounded-full px-4 text-sm font-medium transition disabled:opacity-40;
+  }
+  .ui-btn-primary {
+    @apply ui-btn bg-teal text-white hover:bg-teal-dark;
+  }
+  .ui-btn-ghost {
+    @apply ui-btn border border-paper-line bg-white text-ink hover:bg-paper;
+  }
+  .ui-chip {
+    @apply inline-flex items-center rounded-full border border-paper-line bg-white px-3 py-1.5 text-sm text-ink-muted transition hover:border-ink/15 hover:text-ink;
+  }
+  .ui-chip-on {
+    @apply border-transparent bg-ink text-white hover:border-transparent hover:text-white;
+  }
+}
